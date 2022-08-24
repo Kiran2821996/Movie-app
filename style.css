@@ -1,0 +1,377 @@
+:root {
+  --modal-height: 50vh;
+  --modal-width: 45vw;
+}
+
+/* ===================css reset==================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==============General======================= */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(115, 106, 106);
+  color: aliceblue;
+}
+.container {
+
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============header=================== */
+
+.header {
+  background-color: rgba(4, 4, 4, 0.526);
+  padding: 0.5em 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#search{
+    border: none;
+    border-radius: 20px;
+    width: 350px;
+    height: 30px;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.priority-container {
+  background-color: #e8e9eb;
+  padding: 0.5em;
+  height: 3rem;
+  width: 50%;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.task-button {
+  padding: 0.8em;
+  width: 100%;
+  
+  font-size: 1rem;
+  background-color: #fdfefc69;
+  color: rgb(18, 18, 18);
+  font-weight: bold;
+  border: none;
+  transition: 900ms;
+  border-radius: 15px;
+}
+.task-button:hover{
+    transition: 900ms;
+    cursor: pointer;
+    background-color: #050505;
+    color: rgb(255, 255, 255);
+}
+.priority-color-small {
+  height: 2rem;
+  width: 20%;
+}
+
+.genre-container > * {
+  margin-left: 1.5em;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  padding: 8px;
+}
+i {
+  position: absolute;
+  top: 22px;
+  right: 170px;
+  z-index: 10;
+}
+.rating-container > * {
+  background-color: #96969d;
+  color: rgb(7, 7, 7);
+  display: none;
+  font-weight: bold;
+  padding: 5px;
+  width: 30px;
+  border: 2px solid rgb(17, 16, 16);
+border-radius: 12px;
+}
+.dropdown:hover .rating-container > * {
+  cursor: pointer;
+  display: flex;
+}
+
+.complete {
+  text-align: center;
+  line-height: 2rem;
+  color: #e4b363;
+}
+
+/* ==================modal=============== */
+.task-modal {
+  height: var(--modal-height);
+  width: var(--modal-width);
+  position: absolute;
+  top: calc((100vh - var(--modal-height)) / 2);
+  left: calc((100vw - var(--modal-width)) / 2);
+  display: none;
+  z-index: 1;
+}
+.text-area {
+  height: 100%;
+  width: 50%;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: #070808;
+  color: white;
+  padding: 2em;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.priority-colors {
+  background-color: #4e4e4c;
+  height: 130%;
+  width: 50%;
+ color: #ffffff;
+ flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.priority-colors > * {
+  cursor: pointer;
+}
+.priority-color-big {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  
+  height: 20px;
+  margin: 5px;
+ 
+ 
+}
+.active {
+  border: 3px solid white;
+}
+.cancel-btn {
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  font-size: 1rem;
+  color: white;
+}
+.done-btn {
+  position: absolute;
+  display: inline-block;
+  top: 120%;
+  left: 65%;
+  padding: 0.6em 1em;
+  background-color: #8e8b86;
+  border: none;
+  cursor: pointer;
+  
+  color: white;
+
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.priority-colors input{
+    margin: 5px;
+    border: none;
+    width: 90%;
+    border-radius: 10px;
+    height: 50px;
+    background-color: #4c4c4e;
+    color: aliceblue;
+    font-size: medium;
+    font-weight: bolder;
+    font-style: italic;
+
+}
+/* ===================Tasks================= */
+.task-cont {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  padding: 2em 0;
+  gap: 2rem;
+}
+img{
+    margin-right: 20px;
+    margin-top:5px;
+}
+
+.task-item {
+  padding: 20px;
+  height: 12rem;
+  width: 20%;
+  background-color: rgb(24, 25, 26);
+  position: relative;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: medium;
+  font-weight: bolder;
+}
+.priority-task {
+  height: 10%;
+  text-align: center;
+  border-radius: 25px;
+}
+.priority-rating {
+  height: 10%;
+  text-align: center;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+.movieName {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5em;
+}
+.commondiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* .task-item:hover{
+    
+    font-size: 2.8rem;
+} */
+
+.blur {
+    filter: blur(3px);
+}
+
